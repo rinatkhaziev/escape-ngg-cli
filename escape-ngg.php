@@ -106,7 +106,7 @@ class Escape_NGG_Command extends WP_CLI_Command {
 
 				preg_match( '#nggallery id(\s)*="?(\s)*(?P<id>\d+)#i', $post->post_content, $matches );
 				if ( ! isset( $matches['id'] ) ) {
-					WP_CLI::line( "Could not match gallery id in %d<br />", $post->ID );
+					WP_CLI::line( sprintf( "Could not match gallery id in %d<br />", $post->ID ) );
 					continue;
 				}
 
