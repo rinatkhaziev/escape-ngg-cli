@@ -125,7 +125,7 @@ class Escape_NGG_Command extends WP_CLI_Command {
 				$images = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}ngg_pictures WHERE galleryid = ". intval( $gallery_id ) . " ORDER BY sortorder, pid ASC" );
 
 				if ( ! $path || ! $images ) {
-					WP_CLI::warning( "Could not find images for nggallery %d<br />", $gallery_id );
+					WP_CLI::warning( sprintf( "Could not find images for nggallery %d<br />", $gallery_id ) );
 					continue;
 				}
 
